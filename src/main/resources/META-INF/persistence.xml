@@ -7,8 +7,8 @@
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/base"/>
-            <property name="javax.persistence.jdbc.user" value="andrey" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:1433/mybase"/>
+            <property name="javax.persistence.jdbc.user" value="ANDREY-PC" />
             <property name="javax.persistence.jdbc.password" value="" />
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>

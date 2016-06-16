@@ -7,17 +7,20 @@ import java.sql.SQLException;
 
 public class Main {
 
-    static EntityManagerFactory emf;
-    static EntityManager em;
+//    static EntityManagerFactory emf;
+//    static EntityManager em;
 
     public static void main(String[] args) {
-        /*
-        emf = Persistence.createEntityManagerFactory("testBase");
-        em = emf.createEntityManager();
-        */
-        String url = "jdbc:mysql://localhost:3306/base";
-        String username = "andrey";
-        String password = "";
+
+//        emf = Persistence.createEntityManagerFactory("testBase");
+//        em = emf.createEntityManager();
+
+
+
+        String url = "jdbc:mysql://localhost:3306/mybase";
+        //String url = "jdbc:sqlserver://localhost;databaseName=mybase;integratedSecurity=true";
+        String username = "root";
+        String password = "password";
 
         System.out.println("Connecting database...");
 
@@ -26,5 +29,6 @@ public class Main {
         } catch (SQLException e) {
             throw new IllegalStateException("Cannot connect the database!", e);
         }
+
     }
 }
