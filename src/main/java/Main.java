@@ -7,28 +7,28 @@ import java.sql.SQLException;
 
 public class Main {
 
-//    static EntityManagerFactory emf;
-//    static EntityManager em;
+    static EntityManagerFactory emf;
+    static EntityManager em;
 
     public static void main(String[] args) {
 
-//        emf = Persistence.createEntityManagerFactory("testBase");
-//        em = emf.createEntityManager();
+        emf = Persistence.createEntityManagerFactory("testBase");
+        em = emf.createEntityManager();
 
 
 
-        String url = "jdbc:mysql://localhost:3306/mybase";
-        //String url = "jdbc:sqlserver://localhost;databaseName=mybase;integratedSecurity=true";
-        String username = "root";
-        String password = "password";
-
-        System.out.println("Connecting database...");
-
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            System.out.println("Database connected!");
-        } catch (SQLException e) {
-            throw new IllegalStateException("Cannot connect the database!", e);
-        }
+//        String url = "jdbc:mysql://localhost:3306/testbase";
+//        //String url = "jdbc:sqlserver://localhost;databaseName=mybase;integratedSecurity=true";
+//        String username = "java";
+//        String password = "java";
+//
+//        System.out.println("Connecting database...");
+//
+//        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+//            System.out.println("Database connected!");
+//        } catch (SQLException e) {
+//            throw new IllegalStateException("Cannot connect the database!", e);
+//        }
 
     }
 }
