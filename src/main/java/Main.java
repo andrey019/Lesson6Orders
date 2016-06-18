@@ -16,6 +16,7 @@ public class Main {
             connection = DriverManager.getConnection(address, user, password);
             if (!initDB()) {
                 System.out.println("Error while initializing database!");
+                connection.close();
                 System.exit(0);
             }
             mainMenu(scanner, connection);
