@@ -96,21 +96,23 @@ public class Main {
     }
 
     private static boolean addOrder(Scanner scanner, Connection connection) {
-        int clientId, productId, productPrice, amount, totalPrice;
+        int clientId;
         if ( (clientId = identifyClient(scanner, connection)) == -1 ) {
             System.out.println("No such client in database!\r\n");
             return false;
         }
+        int productId;
         if ( (productId = identifyProduct(scanner, connection)) == -1 ) {
             System.out.println("No such product in database!\r\n");
             return false;
         }
         System.out.print("Type in amount of product: ");
-        amount = getIntInput(scanner);
+        int amount = getIntInput(scanner);
+        int productPrice;
         if ( (productPrice = getProductPrice(connection, productId)) == -1 ) {
             return false;
         }
-        totalPrice = amount * productPrice;
+        int totalPrice = amount * productPrice;
         return addOrderExecute(connection, clientId, productId, amount, totalPrice);
     }
 
