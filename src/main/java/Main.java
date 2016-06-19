@@ -7,14 +7,12 @@ public class Main {
     static String address = "jdbc:mysql://localhost:3306/lesson6order";
     static String user = "root";
     static String password = "password";
-    static Connection connection;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        try {
-            connection = DriverManager.getConnection(address, user, password);
-            if (!initDB()) {
+        try (Connection connection = DriverManager.getConnection(address, user, password)) {
+            if (!initDB(connection)) {
                 System.out.println("Error while initializing database!");
                 connection.close();
                 System.exit(0);
@@ -226,7 +224,7 @@ public class Main {
         }
     }
 
-    private static boolean initDB() {
+    private static boolean initDB(Connection connection) {
         try (Statement statement = connection.createStatement()) {
             statement.execute("DROP TABLE IF EXISTS orders");
             statement.execute("DROP TABLE IF EXISTS client");
